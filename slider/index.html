@@ -1,0 +1,70 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>slider</title>
+
+  <style>
+    .compare {
+  display: grid;
+
+  > * {
+    grid-area: 1 / 1;
+  }
+}
+
+section {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+}
+
+.before {
+  background-color: #fff8f0;
+  mask: linear-gradient(to right, #000 0, var(--pos, 50%), transparent 0);
+}
+
+.after {
+  background-color: #122b1f;
+  mask: linear-gradient(to right, transparent 0, var(--pos, 50%), #000 0);
+  color: #fff8f0;
+}
+
+input {
+  z-index: 1;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input::-webkit-slider-thumb {
+  appearance: none;
+  inline-size: 4px;
+  block-size: 100dvh;
+  background-color: #000;
+}
+
+input::-moz-range-thumb {
+  appearance: none;
+  inline-size: 4px;
+  block-size: 100dvh;
+  background-color: #000;
+}
+
+  </style>
+</head>
+<body>
+  <div class="compare"> 
+    <section class="before">Before</section>
+    <section class="after">After</section>
+    <input type="range" id="range" step="0.1">
+  </div>
+    <script>
+  range.oninput = () =>
+  document.body.style.setProperty("--pos", range.value + "%");
+  </script>
+</body>
+</html>
