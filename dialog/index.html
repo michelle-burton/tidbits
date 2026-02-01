@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <button id="open-dialog">Open Dialog</button>
+</div>
+
+<!--
+<div class="container">
+  <button commandfor="my-dialog" command="show-modal">Open Dialog</button>
+</div>
+-->
+
+<dialog id="my-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc" closedby="any">
+  <h1 id="dialog-title">Hello I'm a Dialog</h1>
+  <p id="dialog-desc">I'm appearing and disapearing with a great transition thanks to the <code>@starting-style</code> property.</p>
+  <form method="dialog">
+    <button>Close</button>
+  </form>
+  <!--
+  <button commandfor="my-dialog" command="close">Close</button>
+-->
+</dialog>
+
+
+<div class="hero">
+
+</div>
+</body>
+</html>
