@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+
+
 </head>
 <body>
-<div class="container">
+<!-- <div class="container">
   <button id="open-dialog">Open Dialog</button>
-</div>
+</div> -->
 
 <!--
 <div class="container">
@@ -17,7 +19,7 @@
 </div>
 -->
 
-<dialog id="my-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc" closedby="any">
+<dialog id="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc" closedby="any">
   <h1 id="dialog-title">Hello I'm a Dialog</h1>
   <p id="dialog-desc">I'm appearing and disapearing with a great transition thanks to the <code>@starting-style</code> property.</p>
   <form method="dialog">
@@ -30,7 +32,14 @@
 
 
 <div class="hero">
+    <div class="hero-content">
+        <h1>Hello I'm a Dialog</h1>
+        <p>I'm appearing and disapearing with a great transition thanks to the <code>@starting-style</code> property.</p>
+        <!--<a href="#" class="cta-button" id="open-dialog">Get Started</a>-->
+        <button id="open-dialog">Open Dialog</button> 
+    </div>
 
 </div>
+    <script src="script.js"></script>
 </body>
 </html>

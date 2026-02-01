@@ -28,3 +28,119 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.1);
 }
+
+
+dialog::backdrop {
+  background-color: #5c5c5c94;
+}
+
+dialog {
+  opacity: 0;
+  translate: 0 25vh;
+  transition-property: translate, opacity, display;
+  transition-duration: 1s;
+  transition-behavior: allow-discrete;
+}
+
+dialog[open] {
+  translate: 0 0;
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+    translate: 0 -25vh;
+  }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion) {
+  dialog {
+    transition: none;
+  }
+}
+
+/* OTHER STYLES */
+
+
+dialog {
+  text-align: center;
+  padding: 1em 1em 2em;
+  max-width: 350px;
+  margin: auto;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.container {
+  text-align: center;
+}
+
+button {
+  box-shadow: 0px 5px 0 #000;
+  height: 40px;
+  border-radius: 6px;
+  padding: 0.3rem 1rem;
+  border: 2px solid #000;
+  background: #d44848;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+button:hover {
+  box-shadow: 0 0 #000;
+  transform: translateY(6px);
+}
+
+button#open-dialog {
+  background-color: #466b46;
+}
+
+a {
+  color: #466b46;
+}
+
+
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #ff6b6b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff5252;
+}
+
