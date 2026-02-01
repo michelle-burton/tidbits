@@ -31,7 +31,7 @@
 
 
 dialog::backdrop {
-  background-color: #5c5c5c94;
+  background-color:rgba(23, 21, 21, 0.58);
 }
 
 dialog {
@@ -76,9 +76,6 @@ p {
   font-size: 1.2em;
 }
 
-.container {
-  text-align: center;
-}
 
 button {
   box-shadow: 0px 5px 0 #000;
@@ -96,18 +93,6 @@ button {
   margin-bottom: 0;
 }
 
-button:hover {
-  box-shadow: 0 0 #000;
-  transform: translateY(6px);
-}
-
-button#open-dialog {
-  background-color: #466b46;
-}
-
-a {
-  color: #466b46;
-}
 
 
 
@@ -121,6 +106,7 @@ a {
 .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    color:#fff;
 }
 
 .hero-content p {
