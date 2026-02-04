@@ -1,5 +1,6 @@
 
 /* Box Model Hack */
+/*https://www.wearedevelopers.com/en/magazine/684/3-javascript-free-techniques-for-accordions-dialogs-and-table-of-contents-684?utm_source=chatgpt.com */
 * {
     margin: 0;
     padding: 0;
@@ -52,6 +53,7 @@ dialog[open] {
   }
 }
 
+// prevent body scroll when dialog is open
 body:has(dialog[open]) {
   overflow: hidden;
 }
