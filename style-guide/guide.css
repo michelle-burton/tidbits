@@ -1,0 +1,1327 @@
+/**
+ * Full bundle: Reset + Tokens + Base Styles + Components + Utilities
+ * https://knoxmajor.github.io/stoneware/foundations/colors/
+ * Drop this single file into your project to transform your UI instantly.
+ * All classes use the `quant-` prefix to avoid conflicts.
+ */
+
+/* ==========================================================================
+   1. CSS RESET
+   ========================================================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+/* ==========================================================================
+   2. DESIGN TOKENS (CSS Custom Properties)
+   ========================================================================== */
+
+:root {
+  /* Colors - Neutrals */
+  --quant-white: #ffffff;
+  --quant-gray-50: #fafafa;
+  --quant-gray-100: #f4f4f5;
+  --quant-gray-200: #e4e4e7;
+  --quant-gray-300: #d4d4d8;
+  --quant-gray-400: #a1a1aa;
+  --quant-gray-500: #71717a;
+  --quant-gray-600: #52525b;
+  --quant-gray-700: #3f3f46;
+  --quant-gray-800: #27272a;
+  --quant-gray-900: #18181b;
+  --quant-black: #0a0a0a;
+
+  /* Colors - Primary */
+  --quant-primary: #18181b;
+  --quant-primary-hover: #27272a;
+  --quant-primary-active: #3f3f46;
+
+  /* Colors - Accent */
+  --quant-accent: #1c8ece;
+  --quant-accent-light: #61a9d9;
+  --quant-accent-bg: #eff6ff;
+
+  /* Colors - Semantic */
+  --quant-success: #16a34a;
+  --quant-success-bg: #f0fdf4;
+  --quant-success-border: #86efac;
+  --quant-warning: #d97706;
+  --quant-warning-bg: #fef3c7;
+  --quant-warning-border: #fcd34d;
+  --quant-warning-text: #92400e;
+  --quant-danger: #dc2626;
+  --quant-danger-hover: #b91c1c;
+  --quant-danger-bg: #fef2f2;
+  --quant-danger-border: #fecaca;
+
+  /* Background Colors */
+  --quant-bg-page: #f9fafb;
+  --quant-bg-card: #ffffff;
+  --quant-bg-elevated: #ffffff;
+  --quant-bg-input: #fafafa;
+  --quant-bg-input-focus: #ffffff;
+  --quant-bg-hover: #f4f4f5;
+  --quant-bg-selected: #fafafa;
+  --quant-card-footer-bg: #f9fafb;
+
+  /* Text Colors */
+  --quant-text-primary: #0a0a0a;
+  --quant-text-secondary: #52525b;
+  --quant-text-tertiary: #71717a;
+  --quant-text-muted: #a1a1aa;
+  --quant-text-inverse: #ffffff;
+
+  /* Border Colors */
+  --quant-border-default: #e4e4e7;
+  --quant-border-hover: #d4d4d8;
+  --quant-border-focus: #18181b;
+  --quant-border-selected: #18181b;
+
+  /* Typography */
+  --quant-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --quant-text-xs: 11px;
+  --quant-text-sm: 12px;
+  --quant-text-base: 13px;
+  --quant-text-md: 14px;
+  --quant-text-lg: 15px;
+  --quant-text-xl: 16px;
+  --quant-text-2xl: 18px;
+  --quant-text-3xl: 20px;
+  --quant-text-4xl: 24px;
+  --quant-text-5xl: 28px;
+  --quant-font-normal: 400;
+  --quant-font-medium: 500;
+  --quant-font-semibold: 600;
+  --quant-font-bold: 700;
+  --quant-leading-tight: 1.25;
+  --quant-leading-snug: 1.375;
+  --quant-leading-normal: 1.5;
+  --quant-leading-relaxed: 1.625;
+
+  /* Spacing */
+  --quant-space-1: 4px;
+  --quant-space-2: 8px;
+  --quant-space-3: 12px;
+  --quant-space-4: 16px;
+  --quant-space-5: 20px;
+  --quant-space-6: 24px;
+  --quant-space-8: 32px;
+  --quant-space-10: 40px;
+  --quant-space-12: 48px;
+
+  /* Border Radius */
+  --quant-radius-sm: 4px;
+  --quant-radius-md: 6px;
+  --quant-radius-lg: 8px;
+  --quant-radius-xl: 10px;
+  --quant-radius-2xl: 12px;
+  --quant-radius-3xl: 16px;
+  --quant-radius-full: 9999px;
+
+  /* Shadows */
+  --quant-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --quant-shadow-md: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 25px rgba(0, 0, 0, 0.05);
+  --quant-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --quant-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+  /* Transitions */
+  --quant-transition-fast: 0.15s ease;
+  --quant-transition-normal: 0.2s ease;
+  --quant-transition-slow: 0.3s ease;
+  --quant-transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-Index */
+  --quant-z-base: 1;
+  --quant-z-dropdown: 10;
+  --quant-z-sticky: 20;
+  --quant-z-overlay: 100;
+  --quant-z-modal: 200;
+  --quant-z-toast: 300;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --quant-bg-page: #121214;
+  --quant-bg-card: #18181b;
+  --quant-bg-elevated: #27272a;
+  --quant-bg-input: #27272a;
+  --quant-bg-input-focus: #3f3f46;
+  --quant-bg-hover: #27272a;
+  --quant-bg-selected: #27272a;
+  --quant-text-primary: #fafafa;
+  --quant-text-secondary: #a1a1aa;
+  --quant-text-tertiary: #71717a;
+  --quant-text-muted: #52525b;
+  --quant-text-inverse: #0a0a0a;
+  --quant-border-default: #3f3f46;
+  --quant-border-hover: #52525b;
+  --quant-border-focus: #fafafa;
+  --quant-border-selected: #fafafa;
+  --quant-primary: #fafafa;
+  --quant-primary-hover: #e4e4e7;
+  --quant-primary-active: #d4d4d8;
+  --quant-success-bg: #052e16;
+  --quant-warning-bg: #431407;
+  --quant-danger-bg: #450a0a;
+  --quant-accent-bg: #1e3a5f;
+  --quant-card-footer-bg: #27272a;
+}
+
+
+/* ==========================================================================
+   3. BASE ELEMENT STYLES
+   ========================================================================== */
+
+body {
+  font-family: var(--quant-font-family);
+  font-size: var(--quant-text-md);
+  font-weight: var(--quant-font-normal);
+  line-height: var(--quant-leading-normal);
+  color: var(--quant-text-primary);
+  background: var(--quant-bg-page);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--quant-font-semibold);
+  line-height: var(--quant-leading-tight);
+  color: var(--quant-text-primary);
+}
+
+h1 { font-size: var(--quant-text-5xl); }
+h2 { font-size: var(--quant-text-4xl); }
+h3 { font-size: var(--quant-text-2xl); }
+h4 { font-size: var(--quant-text-lg); }
+h5 { font-size: var(--quant-text-md); }
+h6 { font-size: var(--quant-text-sm); }
+
+p {
+  color: var(--quant-text-secondary);
+  line-height: var(--quant-leading-relaxed);
+}
+
+a:hover {
+  color: var(--quant-text-primary);
+}
+
+small {
+  font-size: var(--quant-text-sm);
+  color: var(--quant-text-muted);
+}
+
+
+/* ==========================================================================
+   4. TYPOGRAPHY CLASSES
+   ========================================================================== */
+
+.quant-heading-xl {
+  font-size: var(--quant-text-5xl);
+  font-weight: var(--quant-font-semibold);
+  line-height: var(--quant-leading-tight);
+  color: var(--quant-text-primary);
+}
+
+.quant-heading-lg {
+  font-size: var(--quant-text-4xl);
+  font-weight: var(--quant-font-semibold);
+  line-height: var(--quant-leading-tight);
+  color: var(--quant-text-primary);
+}
+
+.quant-heading-md {
+  font-size: var(--quant-text-2xl);
+  font-weight: var(--quant-font-semibold);
+  line-height: var(--quant-leading-snug);
+  color: var(--quant-text-primary);
+}
+
+.quant-heading-sm {
+  font-size: var(--quant-text-lg);
+  font-weight: var(--quant-font-semibold);
+  line-height: var(--quant-leading-snug);
+  color: var(--quant-text-primary);
+}
+
+.quant-text-body {
+  font-size: var(--quant-text-md);
+  color: var(--quant-text-secondary);
+  line-height: var(--quant-leading-relaxed);
+}
+
+.quant-text-small {
+  font-size: var(--quant-text-base);
+  color: var(--quant-text-tertiary);
+  line-height: var(--quant-leading-normal);
+}
+
+.quant-text-caption {
+  font-size: var(--quant-text-sm);
+  color: var(--quant-text-muted);
+  line-height: var(--quant-leading-normal);
+}
+
+.quant-label {
+  font-size: var(--quant-text-xs);
+  font-weight: var(--quant-font-semibold);
+  color: var(--quant-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* ==========================================================================
+   5. BUTTONS
+   ========================================================================== */
+
+.quant-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--quant-space-3);
+  padding: 11px 20px;
+  border-radius: var(--quant-radius-lg);
+  font-family: var(--quant-font-family);
+  font-size: var(--quant-text-lg);
+  font-weight: var(--quant-font-medium);
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--quant-transition-fast);
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+/* Primary Button (Dark) */
+.quant-btn-primary {
+  background: var(--quant-primary);
+  color: var(--quant-text-inverse) !important;
+  border: 1.5px solid var(--quant-primary);
+}
+
+.quant-btn-primary:hover:not(:disabled) {
+  background: var(--quant-primary-hover);
+}
+
+.quant-btn-primary:active:not(:disabled) {
+  background: var(--quant-primary-active);
+}
+
+.quant-btn-primary:disabled {
+  background: var(--quant-gray-200);
+  border-color: var(--quant-gray-200);
+  color: var(--quant-text-muted);
+  cursor: not-allowed;
+}
+
+/* Secondary Button (Outlined) */
+.quant-btn-secondary {
+  background: transparent;
+  color: var(--quant-text-secondary);
+  border: 1.5px solid var(--quant-border-default);
+}
+
+.quant-btn-secondary:hover:not(:disabled) {
+  background: var(--quant-bg-hover);
+  border-color: var(--quant-border-hover);
+}
+
+.quant-btn-secondary:disabled {
+  background: transparent;
+  border-color: var(--quant-gray-200);
+  color: var(--quant-text-muted);
+  cursor: not-allowed;
+}
+
+/* Danger Button */
+.quant-btn-danger {
+  background: var(--quant-danger);
+  color: var(--quant-gray-50);
+  border: 1.5px solid var(--quant-danger);
+}
+
+.quant-btn-danger:hover:not(:disabled) {
+  background: var(--quant-danger-hover);
+}
+
+.quant-btn-danger:disabled {
+  background: var(--quant-gray-200);
+  border-color: var(--quant-gray-200);
+  color: var(--quant-text-muted);
+  cursor: not-allowed;
+}
+
+/* Ghost Button */
+.quant-btn-ghost {
+  background: transparent;
+  color: var(--quant-text-secondary);
+}
+
+.quant-btn-ghost:hover:not(:disabled) {
+  background: var(--quant-bg-hover);
+  color: var(--quant-text-primary);
+}
+
+/* Icon Button */
+.quant-btn-icon {
+  padding: 6px;
+  background: transparent;
+  border: 1px solid var(--quant-border-default);
+  border-radius: var(--quant-radius-md);
+  color: var(--quant-text-tertiary);
+}
+
+.quant-btn-icon:hover:not(:disabled) {
+  background: var(--quant-bg-hover);
+  border-color: var(--quant-border-hover);
+  color: var(--quant-text-primary);
+}
+
+/* Button Sizes */
+.quant-btn-sm {
+  padding: 6px 12px;
+  font-size: var(--quant-text-sm);
+  border-radius: var(--quant-radius-md);
+}
+
+.quant-btn-lg {
+  padding: 14px 24px;
+  font-size: var(--quant-text-xl);
+}
+
+
+/* ==========================================================================
+   6. FORM INPUTS
+   ========================================================================== */
+
+.quant-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--quant-bg-input);
+  border: 1.5px solid var(--quant-border-default);
+  border-radius: var(--quant-radius-lg);
+  font-family: var(--quant-font-family);
+  font-size: var(--quant-text-md);
+  line-height: 1;
+  color: var(--quant-text-primary);
+  transition: all var(--quant-transition-fast);
+}
+
+.quant-input:focus {
+  outline: none;
+  background: var(--quant-bg-input-focus);
+  border-color: var(--quant-border-focus);
+}
+
+.quant-input::placeholder {
+  color: var(--quant-text-muted);
+}
+
+/* Input with Icon/Button */
+.quant-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--quant-space-2);
+  padding: 6px 12px;
+  background: var(--quant-bg-input);
+  border: 1.5px solid var(--quant-border-default);
+  border-radius: var(--quant-radius-lg);
+  transition: all var(--quant-transition-fast);
+}
+
+.quant-input-group:focus-within {
+  background: var(--quant-bg-input-focus);
+  border-color: var(--quant-border-focus);
+}
+
+.quant-input-group .quant-input {
+  flex: 1;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.quant-input-group .quant-input:focus {
+  outline: none;
+}
+
+/* Checkbox & Radio */
+.quant-checkbox,
+.quant-radio {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--quant-primary);
+}
+
+/* Select Option (Clickable Card Style) */
+.quant-select-option {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--quant-bg-card);
+  border: 1.5px solid var(--quant-border-default);
+  border-radius: var(--quant-radius-lg);
+  cursor: pointer;
+  transition: all var(--quant-transition-fast);
+}
+
+.quant-select-option:hover {
+  border-color: var(--quant-border-focus);
+  background: var(--quant-bg-selected);
+}
+
+.quant-select-option.selected {
+  border-color: var(--quant-border-selected);
+  background: var(--quant-bg-selected);
+}
+
+.quant-select-option input {
+  margin-right: var(--quant-space-3);
+}
+
+.quant-select-option label {
+  font-size: var(--quant-text-lg);
+  font-weight: var(--quant-font-medium);
+  color: var(--quant-text-primary);
+  cursor: pointer;
+  flex: 1;
+}
+
+/* Textarea */
+.quant-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 14px;
+  background: var(--quant-bg-input);
+  border: 1.5px solid var(--quant-border-default);
+  border-radius: var(--quant-radius-lg);
+  font-family: var(--quant-font-family);
+  font-size: var(--quant-text-md);
+  color: var(--quant-text-primary);
+  transition: all var(--quant-transition-fast);
+  resize: vertical;
+}
+
+.quant-textarea:focus {
+  outline: none;
+  background: var(--quant-bg-input-focus);
+  border-color: var(--quant-border-focus);
+}
+
+/* Select */
+.quant-select {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--quant-bg-input);
+  border: 1.5px solid var(--quant-border-default);
+  border-radius: var(--quant-radius-lg);
+  font-family: var(--quant-font-family);
+  font-size: var(--quant-text-md);
+  color: var(--quant-text-primary);
+  cursor: pointer;
+  transition: all var(--quant-transition-fast);
+}
+
+.quant-select:focus {
+  outline: none;
+  background: var(--quant-bg-input-focus);
+  border-color: var(--quant-border-focus);
+}
+
+
+/* ==========================================================================
+   7. CARDS
+   ========================================================================== */
+
+.quant-card {
+  background: var(--quant-bg-card);
+  border-radius: var(--quant-radius-3xl);
+  padding: var(--quant-space-10);
+  box-shadow: var(--quant-shadow-md);
+}
+
+/* Space buttons inside cards */
+.quant-card > .quant-btn:first-of-type {
+  margin-top: var(--quant-space-6);
+}
+
+.quant-card > .quant-btn + .quant-btn {
+  margin-left: var(--quant-space-3);
+}
+
+.quant-card-sm {
+  padding: var(--quant-space-6);
+  border-radius: var(--quant-radius-xl);
+}
+
+.quant-card-bordered {
+  border: 1px solid var(--quant-border-default);
+  box-shadow: none;
+}
+
+.quant-card-elevated {
+  box-shadow: var(--quant-shadow-lg);
+}
+
+.quant-card-header {
+  margin-bottom: var(--quant-space-6);
+}
+
+.quant-card-title {
+  font-size: var(--quant-text-2xl);
+  font-weight: var(--quant-font-semibold);
+  color: var(--quant-text-primary);
+  margin-bottom: var(--quant-space-2);
+}
+
+.quant-card-title:has(+ .quant-card-subtitle) {
+  margin-bottom: 0;
+}
+
+.quant-card-subtitle {
+  font-size: var(--quant-text-lg);
+  color: var(--quant-text-tertiary);
+  line-height: var(--quant-leading-normal);
+  padding-top: var(--quant-space-1);
+}
+
+.quant-card-subtitle + * {
+  margin-top: var(--quant-space-6);
+}
+
+.quant-card-content {
+  margin-bottom: var(--quant-space-6);
+}
+
+.quant-card-footer {
+  display: flex;
+  gap: var(--quant-space-3);
+}
+
+
+/* ==========================================================================
+   8. MODALS
+   ========================================================================== */
+
+.quant-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--quant-z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--quant-transition-normal), visibility var(--quant-transition-normal);
+}
+
+.quant-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* ==========================================================================
+   9. CHAT MESSAGES
+   ========================================================================== */
+
+.quant-chat-message {
+  display: flex;
+  margin-bottom: var(--quant-space-3);
+  animation: quant-message-slide-in 0.3s ease;
+}
+
+@keyframes quant-message-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quant-chat-message.user {
+  justify-content: flex-end;
+}
+
+.quant-chat-message.assistant {
+  justify-content: flex-start;
+}
+
+.quant-message-bubble {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: var(--quant-radius-2xl);
+  font-size: var(--quant-text-md);
+  line-height: var(--quant-leading-normal);
+}
+
+.quant-chat-message.user .quant-message-bubble {
+  background: var(--quant-primary);
+  color: var(--quant-text-inverse);
+  border-bottom-right-radius: var(--quant-radius-sm);
+}
+
+.quant-chat-message.assistant .quant-message-bubble {
+  background: var(--quant-bg-card);
+  color: var(--quant-text-primary);
+  border: 1px solid var(--quant-border-default);
+  border-bottom-left-radius: var(--quant-radius-sm);
+}
+
+
+/* ==========================================================================
+   10. PANELS & SIDEBARS
+   ========================================================================== */
+
+.quant-panel {
+  background: var(--quant-bg-card);
+  border: 1px solid var(--quant-border-default);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.quant-panel-header {
+  padding: var(--quant-space-5);
+  border-bottom: 1px solid var(--quant-border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quant-panel-title {
+  font-size: var(--quant-text-md);
+  font-weight: var(--quant-font-semibold);
+  color: var(--quant-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quant-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--quant-space-4);
+}
+
+
+/* ==========================================================================
+   11. COLLAPSIBLE MODULES
+   ========================================================================== */
+
+.quant-module {
+  background: var(--quant-bg-page);
+  border: 1px solid var(--quant-border-default);
+  border-radius: var(--quant-radius-lg);
+  margin-bottom: var(--quant-space-3);
+  overflow: hidden;
+}
+
+.quant-module-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--quant-space-3) var(--quant-space-4);
+  cursor: pointer;
+  transition: background var(--quant-transition-fast);
+}
+
+.quant-module-header:hover {
+  background: var(--quant-bg-hover);
+}
+
+.quant-module-title {
+  display: flex;
+  align-items: center;
+  gap: var(--quant-space-3);
+  font-size: var(--quant-text-md);
+  font-weight: var(--quant-font-medium);
+  color: var(--quant-text-primary);
+}
+
+.quant-module-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--quant-text-tertiary);
+}
+
+.quant-module-chevron {
+  color: var(--quant-text-tertiary);
+  transition: transform var(--quant-transition-normal);
+}
+
+.quant-module.expanded .quant-module-chevron {
+  transform: rotate(180deg);
+}
+
+.quant-module-content {
+  display: none;
+  padding: 0 var(--quant-space-4) var(--quant-space-4);
+  border-top: 1px solid var(--quant-border-default);
+}
+
+.quant-module.expanded .quant-module-content {
+  display: block;
+}
+
+
+/* ==========================================================================
+   12. LIST ITEMS
+   ========================================================================== */
+
+.quant-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--quant-space-3);
+  padding: var(--quant-space-3);
+  background: var(--quant-bg-card);
+  border-radius: var(--quant-radius-md);
+  margin-bottom: var(--quant-space-2);
+  cursor: pointer;
+  transition: all var(--quant-transition-fast);
+  border: 1px solid transparent;
+}
+
+.quant-list-item:hover {
+  border-color: var(--quant-border-default);
+}
+
+.quant-list-item.active {
+  background: var(--quant-bg-subtle);
+  border-color: var(--quant-text-tertiary);
+}
+
+.quant-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.quant-list-item-icon {
+  flex-shrink: 0;
+  color: var(--quant-text-tertiary);
+  margin-top: 2px;
+}
+
+.quant-list-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.quant-list-item-title {
+  font-size: var(--quant-text-base);
+  font-weight: var(--quant-font-medium);
+  color: var(--quant-text-primary);
+  margin-bottom: 2px;
+}
+
+.quant-list-item-meta {
+  font-size: var(--quant-text-xs);
+  color: var(--quant-text-tertiary);
+}
+
+
+/* ==========================================================================
+   13. CHIPS & TAGS
+   ========================================================================== */
+
+.quant-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--quant-bg-selected);
+  border: 1px solid var(--quant-border-default);
+  border-radius: var(--quant-radius-lg);
+  font-size: var(--quant-text-md);
+  color: var(--quant-text-secondary);
+  cursor: pointer;
+  transition: all var(--quant-transition-fast);
+}
+
+.quant-chip:hover {
+  background: var(--quant-bg-hover);
+  border-color: var(--quant-border-hover);
+  color: var(--quant-text-primary);
+}
+
+.quant-chip-sm {
+  padding: 6px 10px;
+  font-size: var(--quant-text-sm);
+}
+
+.quant-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: var(--quant-bg-hover);
+  border-radius: var(--quant-radius-md);
+  font-size: var(--quant-text-xs);
+  font-weight: var(--quant-font-medium);
+  color: var(--quant-text-secondary);
+}
+
+.quant-tag-success {
+  background: var(--quant-success-bg);
+  color: var(--quant-success);
+}
+
+.quant-tag-warning {
+  background: var(--quant-warning-bg);
+  color: var(--quant-warning-text);
+}
+
+.quant-tag-danger {
+  background: var(--quant-danger-bg);
+  color: var(--quant-danger);
+}
+
+
+/* ==========================================================================
+   14. PROGRESS INDICATORS
+   ========================================================================== */
+
+/* Progress Dots */
+.quant-progress-dots {
+  display: flex;
+  gap: var(--quant-space-2);
+  justify-content: center;
+}
+
+.quant-progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--quant-radius-full);
+  background: var(--quant-gray-200);
+  transition: all var(--quant-transition-slow);
+}
+
+.quant-progress-dot.active {
+  background: var(--quant-primary);
+  width: 24px;
+  border-radius: var(--quant-radius-sm);
+}
+
+.quant-progress-dot.completed {
+  background: var(--quant-gray-400);
+}
+
+/* Spinner */
+.quant-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--quant-gray-200);
+  border-top-color: var(--quant-primary);
+  border-radius: var(--quant-radius-full);
+  animation: quant-spin 1s linear infinite;
+}
+
+.quant-spinner-sm {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+}
+
+@keyframes quant-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ==========================================================================
+   15. BANNERS & ALERTS
+   ========================================================================== */
+
+.quant-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--quant-space-3);
+  padding: var(--quant-space-3) var(--quant-space-4);
+  border-radius: var(--quant-radius-lg);
+}
+
+.quant-banner-warning {
+  background: var(--quant-warning-bg);
+  border: 1px solid var(--quant-warning-border);
+}
+
+.quant-banner-warning .quant-banner-text {
+  color: var(--quant-warning-text);
+}
+
+.quant-banner-danger {
+  background: var(--quant-danger-bg);
+  border: 1px solid var(--quant-danger-border);
+}
+
+.quant-banner-danger .quant-banner-text {
+  color: var(--quant-danger);
+}
+
+.quant-banner-success {
+  background: var(--quant-success-bg);
+  border: 1px solid var(--quant-success-border);
+}
+
+.quant-banner-success .quant-banner-text {
+  color: var(--quant-success);
+}
+
+.quant-banner-text {
+  font-size: var(--quant-text-base);
+  font-weight: var(--quant-font-medium);
+}
+
+.quant-banner-actions {
+  display: flex;
+  gap: var(--quant-space-2);
+}
+
+/* Banner-specific button variants */
+.quant-banner-warning .quant-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--quant-warning);
+  color: var(--quant-warning-text);
+}
+
+.quant-banner-warning .quant-btn-outline:hover {
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.quant-banner-danger .quant-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--quant-danger);
+  color: var(--quant-danger);
+}
+
+.quant-banner-danger .quant-btn-outline:hover {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.quant-banner-success .quant-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--quant-success);
+  color: var(--quant-success);
+}
+
+.quant-banner-success .quant-btn-outline:hover {
+  background: rgba(22, 163, 74, 0.1);
+}
+
+
+/* ==========================================================================
+   16. AVATARS
+   ========================================================================== */
+
+.quant-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--quant-radius-full);
+  background: linear-gradient(135deg, var(--quant-gray-200) 0%, var(--quant-gray-300) 100%);
+  font-size: var(--quant-text-sm);
+  font-weight: var(--quant-font-semibold);
+  color: var(--quant-text-secondary);
+  flex-shrink: 0;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.quant-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quant-avatar-sm {
+  width: 28px;
+  height: 28px;
+}
+
+.quant-avatar-xs {
+  width: 24px;
+  height: 24px;
+  font-size: var(--quant-text-xs);
+}
+
+.quant-avatar-lg {
+  width: 56px;
+  height: 56px;
+  font-size: var(--quant-text-lg);
+}
+
+.quant-avatar-group {
+  display: flex;
+}
+
+.quant-avatar-group .quant-avatar {
+  margin-left: -14px;
+  border: 2px solid var(--quant-bg-card);
+}
+
+.quant-avatar-group .quant-avatar:first-child {
+  margin-left: 0;
+}
+
+
+/* ==========================================================================
+   17. DIVIDERS
+   ========================================================================== */
+
+.quant-divider {
+  height: 1px;
+  background: var(--quant-border-default);
+  margin: var(--quant-space-6) 0;
+}
+
+.quant-divider-sm {
+  margin: var(--quant-space-3) 0;
+}
+
+
+/* ==========================================================================
+   18. FIELD GRID (Data Display)
+   ========================================================================== */
+
+.quant-field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--quant-space-4);
+}
+
+.quant-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--quant-space-1);
+}
+
+.quant-field-label {
+  font-size: var(--quant-text-xs);
+  font-weight: var(--quant-font-semibold);
+  color: var(--quant-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quant-field-value {
+  font-size: var(--quant-text-md);
+  font-weight: var(--quant-font-medium);
+  color: var(--quant-text-primary);
+}
+
+
+/* ==========================================================================
+   19. NAVIGATION
+   ========================================================================== */
+
+.quant-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--quant-space-1);
+}
+
+.quant-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--quant-space-3);
+  padding: var(--quant-space-2) var(--quant-space-3);
+  border-radius: var(--quant-radius-lg);
+  font-size: var(--quant-text-md);
+  font-weight: var(--quant-font-medium);
+  color: var(--quant-text-secondary);
+  transition: all var(--quant-transition-fast);
+  cursor: pointer;
+}
+
+.quant-nav-item:hover {
+  background: var(--quant-bg-hover);
+  color: var(--quant-text-primary);
+}
+
+.quant-nav-item.active {
+  background: var(--quant-bg-hover);
+  color: var(--quant-text-primary);
+}
+
+.quant-nav-item-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--quant-text-tertiary);
+}
+
+.quant-nav-section {
+  font-size: var(--quant-text-xs);
+  font-weight: var(--quant-font-semibold);
+  color: var(--quant-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: var(--quant-space-4) var(--quant-space-3) var(--quant-space-2);
+}
+
+
+/* ==========================================================================
+   20. UTILITY CLASSES
+   ========================================================================== */
+
+/* Display */
+.quant-hidden { display: none; }
+.quant-flex { display: flex; }
+.quant-inline-flex { display: inline-flex; }
+.quant-grid { display: grid; }
+.quant-block { display: block; }
+.quant-inline { display: inline; }
+
+/* Flex */
+.quant-flex-col { flex-direction: column; }
+.quant-flex-row { flex-direction: row; }
+.quant-items-center { align-items: center; }
+.quant-items-start { align-items: flex-start; }
+.quant-items-end { align-items: flex-end; }
+.quant-justify-center { justify-content: center; }
+.quant-justify-between { justify-content: space-between; }
+.quant-justify-end { justify-content: flex-end; }
+.quant-flex-1 { flex: 1; }
+.quant-flex-wrap { flex-wrap: wrap; }
+
+/* Gap */
+.quant-gap-1 { gap: var(--quant-space-1); }
+.quant-gap-2 { gap: var(--quant-space-2); }
+.quant-gap-3 { gap: var(--quant-space-3); }
+.quant-gap-4 { gap: var(--quant-space-4); }
+.quant-gap-5 { gap: var(--quant-space-5); }
+.quant-gap-6 { gap: var(--quant-space-6); }
+
+/* Padding */
+.quant-p-0 { padding: 0; }
+.quant-p-1 { padding: var(--quant-space-1); }
+.quant-p-2 { padding: var(--quant-space-2); }
+.quant-p-3 { padding: var(--quant-space-3); }
+.quant-p-4 { padding: var(--quant-space-4); }
+.quant-p-5 { padding: var(--quant-space-5); }
+.quant-p-6 { padding: var(--quant-space-6); }
+.quant-px-4 { padding-left: var(--quant-space-4); padding-right: var(--quant-space-4); }
+.quant-py-4 { padding-top: var(--quant-space-4); padding-bottom: var(--quant-space-4); }
+
+/* Margin */
+.quant-m-0 { margin: 0; }
+.quant-mb-1 { margin-bottom: var(--quant-space-1); }
+.quant-mb-2 { margin-bottom: var(--quant-space-2); }
+.quant-mb-3 { margin-bottom: var(--quant-space-3); }
+.quant-mb-4 { margin-bottom: var(--quant-space-4); }
+.quant-mb-5 { margin-bottom: var(--quant-space-5); }
+.quant-mb-6 { margin-bottom: var(--quant-space-6); }
+.quant-mt-4 { margin-top: var(--quant-space-4); }
+.quant-mt-6 { margin-top: var(--quant-space-6); }
+
+/* Text */
+.quant-text-center { text-align: center; }
+.quant-text-left { text-align: left; }
+.quant-text-right { text-align: right; }
+.quant-text-primary { color: var(--quant-text-primary); }
+.quant-text-secondary { color: var(--quant-text-secondary); }
+.quant-text-tertiary { color: var(--quant-text-tertiary); }
+.quant-text-muted { color: var(--quant-text-muted); }
+.quant-font-normal { font-weight: var(--quant-font-normal); }
+.quant-font-medium { font-weight: var(--quant-font-medium); }
+.quant-font-semibold { font-weight: var(--quant-font-semibold); }
+.quant-font-bold { font-weight: var(--quant-font-bold); }
+
+/* Truncate */
+.quant-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quant-line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.quant-line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Overflow */
+.quant-overflow-hidden { overflow: hidden; }
+.quant-overflow-auto { overflow: auto; }
+.quant-overflow-y-auto { overflow-y: auto; }
+
+/* Width/Height */
+.quant-w-full { width: 100%; }
+.quant-h-full { height: 100%; }
+.quant-min-h-screen { min-height: 100vh; }
+
+/* Cursor */
+.quant-cursor-pointer { cursor: pointer; }
+.quant-cursor-default { cursor: default; }
+
+/* Transitions */
+.quant-transition { transition: all var(--quant-transition-fast); }
+.quant-transition-slow { transition: all var(--quant-transition-slow); }
+
+/* Border Radius */
+.quant-rounded { border-radius: var(--quant-radius-md); }
+.quant-rounded-lg { border-radius: var(--quant-radius-lg); }
+.quant-rounded-xl { border-radius: var(--quant-radius-xl); }
+.quant-rounded-full { border-radius: var(--quant-radius-full); }
+
+/* Background */
+.quant-bg-page { background: var(--quant-bg-page); }
+.quant-bg-card { background: var(--quant-bg-card); }
+.quant-bg-hover { background: var(--quant-bg-hover); }
