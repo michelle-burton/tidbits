@@ -1,0 +1,42 @@
+
+/* Box Model Hack */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+   --bg-color: #12152C;
+   --text-color: #fff;
+   --flex-color: #6eddfc;
+   --blue: oklch(from var(--flex-color) .67 .15 220)
+}
+
+
+body {
+    padding:40px;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color)
+}
+
+.card {
+    margin:20px;
+    padding:30px;
+    background-color: oklch(from var(--flex-color) .4 .07 230);
+    border: 2px solid var(--blue)
+}
+
+.title {
+    color: var(--blue)
+}
+button {
+    margin-top: 20px;
+    background-color: var(--blue);
+    padding: 15px;
+    width:100%;
+    color: white;
+    font-weight:bold;
+}
