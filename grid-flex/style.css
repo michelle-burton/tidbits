@@ -11,7 +11,11 @@
    --bg-color: #12152C;
    --text-color: #fff;
    --flex-color: #6eddfc;
-   --blue: oklch(from var(--flex-color) .67 .15 220)
+   --blue: oklch(from var(--flex-color) .67 .15 220);
+   --grid-color: #fc8cd0;
+   --purple-bg: oklch(0.28 0.06 300);
+   --pink: oklch(0.72 0.16 345);
+
 }
 
 .container {
@@ -20,6 +24,9 @@
     padding-inline: 1rem;
 }
 
+hr {
+    margin-block: 3rem;
+}
 
 body {
     padding:3rem;
@@ -28,14 +35,6 @@ body {
     color: var(--text-color)
 }
 
-button {
-    margin-top: 2rem;
-    background-color: var(--blue);
-    padding: 1rem;
-    width:100%;
-    color: white;
-    font-weight:bold;
-}
 
 .flex-container {
     border: 5px dotted white;
@@ -55,8 +54,81 @@ button {
     container-type: inline;
     display:flex;
     flex-direction: column;
+    flex:1;
 }
-.title {
+
+.flex-container .title {
     color: var(--blue);
-    font-size: clamp(1.1rem, 2cqi, 1.6rem);
+    font-size: clamp(1.5rem, 2cqi, 1.8rem);
+    margin-bottom: .5rem;
+}
+
+.flex-container .card p {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.flex-container button {
+
+    background-color: var(--blue);
+    padding: 1rem;
+    width:100%;
+    color: white;
+    font-weight:bold;
+    border:none;
+    border-radius: .5rem;
+}
+
+
+
+// GRID
+.grid-container{
+    border: 5px dotted white;
+    width: min(1100px, 95%);
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+}
+#one {
+    width: min(1100px, 95%);
+    border: 5px dotted white;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.grid-container .card {
+    margin: 1.5rem;
+    padding: 2rem;
+    background-color: var(--purple-bg);
+    border: 2px solid var(--pink);
+    border-radius: .8rem;
+    text-align: center;
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+
+    gap: 1rem;
+
+}
+
+.grid-container .title {
+    color: var(--pink);
+    font-size: clamp(1.5rem, 2cqi, 1.8rem);
+    margin-bottom: .5rem;
+}
+
+.grid-container .card p {
+    margin-bottom: 1rem;
+}
+
+.grid-container button {
+    margin-top: auto;
+    background-color: var(--pink);
+    padding: 1rem;
+    width:100%;
+    color: white;
+    font-weight:bold;
+    border:none;
+    border-radius: .5rem;
 }
