@@ -1,0 +1,77 @@
+
+/* Box Model Hack */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+   --bg-color: #12152C;
+   --text-color: #fff;
+   --flex-color: #6eddfc;
+   --blue: oklch(from var(--flex-color) .67 .15 220);
+   --grid-color: #fc8cd0;
+   --purple-bg: oklch(0.28 0.06 300);
+   --pink: oklch(0.72 0.16 345);
+   --nav: rgb(54,43,255);
+
+        --bg: #0b0f2a;
+        --panel: #4c3a63;
+        --outline: #ff5ac8;
+        --radius: 22px;
+}
+
+main, aside, footer {
+  padding: 1rem;
+}
+
+.grid-container {
+    background-color: var(--bg-color);
+    min-height:100vh;
+    min-height: 100dvh;
+    font-family: Poppins;
+    color:white;
+    display:grid;
+    border: dotted white 2px;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "nav nav"
+    "aside main"
+    "footer footer"
+}
+
+nav {
+    grid-area: nav;
+    border: dotted green 2px;
+    background-color: var(--nav);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    height:55px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+main {
+    grid-area: main;
+    border: dotted pink 2px;
+}
+
+aside {
+    grid-area: aside;
+    border: dotted yellow 2px;
+}
+footer {
+    grid-area: footer;
+    border: dotted red 2px;
+    text-align: center;
+}
