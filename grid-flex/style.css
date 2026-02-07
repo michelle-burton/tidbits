@@ -165,6 +165,7 @@ main{
     border-radius: .2rem;
 }
 
+/* Grid card */
 .grid-card {
     margin: 50px auto;
     width: min(600px, 95%);
@@ -183,4 +184,36 @@ main{
     border-radius: .1rem;
     display:inline;
 
+}
+
+
+/* Grid Image card */
+.grid-image {
+    margin: 50px auto;
+    width: min(600px, 95%);
+    background-color: var(--purple-bg);
+    border: 2px solid var(--pink);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
+}
+
+.grid-image .card {
+  border: 1px solid #0003;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card-media {
+    height: 240px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-media img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    display: block;
 }
