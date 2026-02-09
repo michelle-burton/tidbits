@@ -1,0 +1,55 @@
+  /* ==========================================================================
+     QUANTUM AI DESIGN
+     ========================================================================== */
+:root {
+  /* Neutrals */
+  --q-black-900: #0B0D1A;   /* deep space purple-black */
+  --q-black-800: #14172B;
+  --q-white-100: #F4F6FF;
+
+  /* Brand purples */
+  --q-purple-700: #2A1E5C;
+  --q-purple-600: #3B2C85;
+  --q-purple-500: #5A4B9D;
+
+  /* Plasma blues */
+  --q-blue-500: #2EC5FF;
+  --q-blue-600: #1B8ED6;
+
+  /* Energy accents */
+  --q-orange-500: #FF9A3C;
+  --q-gold-500: #FFC857;
+
+
+
+/* DARK MODE */
+  --color-bg: var(--q-black-900);
+  --color-surface: var(--q-black-800);
+  --color-border: var(--q-purple-700);
+
+  --color-text-primary: var(--q-white-100);
+  --color-text-muted: #B8BCE6;
+
+  --color-primary: var(--q-purple-500);
+  --color-primary-hover: var(--q-purple-600);
+
+  --color-accent: var(--q-blue-500);
+  --color-accent-warm: var(--q-orange-500);
+
+
+}
+
+[data-theme="light"] {
+  --color-bg: #F7F8FF;
+  --color-surface: #FFFFFF;
+  --color-border: #E2E5FF;
+
+  --color-text-primary: #1A1D3B;
+  --color-text-muted: #5E648F;
+
+  --color-primary: var(--q-purple-600);
+  --color-primary-hover: var(--q-purple-700);
+
+  --color-accent: var(--q-blue-600);
+  --color-accent-warm: var(--q-gold-500);
+}

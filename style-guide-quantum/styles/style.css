@@ -1,0 +1,14 @@
+
+/* Box Model Hack */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: system-ui, sans-serif;
+}
