@@ -6,3 +6,23 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
+:root {
+    --color-primary: #2563EB;
+}
+
+.btn {
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.btn--primary {
+  background: var(--color-primary-500);
+  color: white;
+}
+
+.btn--outlined {
+  background: transparent;
+  border: 1px solid currentColor;
+}
