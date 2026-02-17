@@ -6,6 +6,24 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+:root {
+    --base: #12152C;
+    --info: #0363fc;
+    --warning: rgb(200,100,0);
+    --error: hsl(0 100% 50%);
+}
 
-      body { margin: 0; display: grid; place-items: center; min-height: 100vh; }
-      video { width: min(900px, 95vw); height: auto; border-radius: 16px; }
+body { 
+    background-color: var(--base);
+    margin: 0; 
+    display: grid; 
+    place-items: center; 
+    min-height: 100vh; 
+}
+
+video { 
+    width: min(900px, 95vw); 
+    height: auto; 
+    border-radius: 16px; 
+    border: 1px solid var(--warning);
+}
