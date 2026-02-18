@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="wrap">
+      <header>
+        <h1>Contact</h1>
+        <p>Send a note. This demo validates inputs and shows a success message locally (no internet required).</p>
+      </header>
+
+      <div class="card">
+        <div class="card-inner">
+          <div id="status" class="status" role="status" aria-live="polite"></div>
+
+          <form id="contactForm" novalidate>
+            <div class="row">
+              <div class="field" data-field="name">
+                <label>
+                  Name
+                  <input
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    placeholder="Michelle Burton"
+                    minlength="2"
+                    required
+                  />
+                  <span class="error">Please enter your name (at least 2 characters).</span>
+                </label>
+              </div>
+
+              <div class="field" data-field="email">
+                <label>
+                  Email
+                  <input
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                  <span class="error">Please enter a valid email address.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field" data-field="topic">
+                <label>
+                  Topic
+                  <select name="topic" required>
+                    <option value="" selected disabled>Choose one…</option>
+                    <option value="project">Project inquiry</option>
+                    <option value="collab">Collaboration</option>
+                    <option value="speaking">Speaking / podcast</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="error">Please choose a topic.</span>
+                </label>
+              </div>
+
+              <div class="field" data-field="budget">
+                <label>
+                  Budget (optional)
+                  <input name="budget" type="text" placeholder="$1,000 – $5,000" />
+                  <span class="hint">You can leave this blank.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field" data-field="message">
+              <label>
+                Message
+                <textarea
+                  name="message"
+                  placeholder="Tell me what you’re building, timelines, links, etc."
+                  minlength="10"
+                  required
+                ></textarea>
+                <span class="error">Please write a message (at least 10 characters).</span>
+              </label>
+              <div class="hint">Tip: paste your repo link or Figma link here.</div>
+            </div>
+
+            <!-- Honeypot: bots often fill this -->
+            <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
+              <label>Company <input name="company" type="text" tabindex="-1" autocomplete="off" /></label>
+            </div>
+
+            <div class="actions">
+              <button class="btn" type="submit" id="submitBtn">Send message</button>
+              <button class="btn ghost" type="button" id="resetBtn">Reset</button>
+              <div class="fineprint">Local demo. To make it real, wire this to Formspree / Netlify Forms / a serverless endpoint.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+    </script>
+    
+    <script src="scripts/script.js"></script>
+</body>
+</html>
