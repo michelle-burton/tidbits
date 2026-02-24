@@ -1,0 +1,51 @@
+
+/* Box Model Hack */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 600px;
+    align-item: center;
+    padding-block: 2rem;
+}
+
+button {
+    --color: #4274B2;
+    color: var(--color);
+    border: rgb(from var(--color) r g b / 0.2) solid 2px;
+    border-radius: 35px;
+    box-shadow: 
+        0 0 2px 2px rgb(255 255 255 / 1) inset, 
+        0 20px 20px 0 rgb(0 0 0 / 0.05);
+    font-size: 24px; 
+    padding: .75rem 10px;
+    width: 200px;
+    background: linear-gradient(
+        to bottom, 
+        rgb(from var(--color) r g b / 0.2), 
+        rgb(from var(--color) r g b / 0.05)
+    );
+    &.warning{
+        --color: #BF5820;
+    }
+    &.error{
+        --color: #AF484B;
+    }
+    &.success{
+        --color: #2C6D30; 
+    }
+    &.ghost{
+        --color: #676C6E;
+    }
+}
