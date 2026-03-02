@@ -9,7 +9,7 @@
 body {
     padding: 2rem;
     display: flex;
-    align-item: center;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
 }
