@@ -22,6 +22,7 @@ article.card {
   display: flex;
   border: 1px solid red;
   padding: 1rem;
+  background-color: #FEF8EF;
 
 }
 
@@ -63,5 +64,15 @@ img {
 
 button {
     padding: 1rem 2rem;
-    margin-top: 1rem;
+    margin: .5rem;
+    width: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.green {
+    background-color: green;
+}
+
+.white {
+    background-color: white
 }
