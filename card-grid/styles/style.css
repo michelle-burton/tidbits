@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
 body {
     padding: 4rem;
     display: flex;
@@ -67,12 +68,15 @@ button {
     margin: .5rem;
     width: 50%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
 }
 
 .green {
     background-color: green;
+    color: white;
 }
 
 .white {
-    background-color: white
+    background-color: white;
+    color: black;
 }
