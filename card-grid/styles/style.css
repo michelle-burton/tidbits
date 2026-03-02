@@ -42,3 +42,26 @@ article.card {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)) */
 }
 
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-content {
+  flex: 1;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+img {
+    border-radius: 8px 8px 0 0;
+    margin: 1rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+}
