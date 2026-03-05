@@ -12,7 +12,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
 
 
@@ -36,6 +35,7 @@ body {
 
 
 /* CARD STYLES */
+//grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
 img {
   border: 1px solid green;
 }
@@ -45,6 +45,7 @@ article.card {
   border: 1px solid red;
   padding: 1rem;
   background-color: #FEF8EF;
+  height: 12.5rem;
 
 }
 .card-footer {
@@ -73,12 +74,10 @@ button {
     font-weight: bold;
 }
 
-
 .white {
     background-color: white;
     color: black;
 }
-
 
 .green {
     background-color: green;
