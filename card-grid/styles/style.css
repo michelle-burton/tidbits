@@ -15,17 +15,6 @@ body {
     flex-direction: column;
 }
 
-img {
-  border: 1px solid green;
-}
-
-article.card {
-  display: flex;
-  border: 1px solid red;
-  padding: 1rem;
-  background-color: #FEF8EF;
-
-}
 
 /* header {
     margin: 50px 0;
@@ -46,6 +35,18 @@ article.card {
 }
 
 
+/* CARD STYLES */
+img {
+  border: 1px solid green;
+}
+
+article.card {
+  display: flex;
+  border: 1px solid red;
+  padding: 1rem;
+  background-color: #FEF8EF;
+
+}
 .card-footer {
   display: flex;
   flex-direction: row;
