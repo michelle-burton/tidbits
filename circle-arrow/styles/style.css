@@ -6,3 +6,22 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
+.circle {
+  height: 100px;         /* Set a specific height */
+  width: 100px;          /* Set the same width as the height for a perfect square */
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: calc(attr(size type(<length>)));
+  aspect-ratio: 1;
+  background: #45ADA8;
+  border-radius: 50%;
+  anchor-name: --c1;
+}
+.circle + .circle {
+  anchor-name: --c2;
+  background: #FA6900;
+  left: 72%;
+  top: 40%;
+}
