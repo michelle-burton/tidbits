@@ -32,7 +32,18 @@ body {
     /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)) */
 }
+.example {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
 
+.example {
+    max-width: 1100px;
+    width: 100%;
+    justify-content: center;
+    border: 5px solid blue;
+}
 
 /* CARD STYLES */
 //grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
@@ -49,9 +60,10 @@ article.card {
 
 }
 .card-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  //display: flex;
+ // flex-direction: row;
+  //justify-content: space-between;
+  display: inline-block;
   padding: 1rem;
 }
 
@@ -72,6 +84,7 @@ button {
     width: 50%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     font-weight: bold;
+    display: inline-block;
 }
 
 .white {
