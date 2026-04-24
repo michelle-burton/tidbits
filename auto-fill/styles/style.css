@@ -6,3 +6,66 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
+.grid-container {
+  /**
+   * User input values.
+   */
+  --grid-layout-gap: 10px;
+  --grid-column-count: 8; /* This gets overridden by an inline style. */
+  --grid-item--min-width: 200px; /* This gets overridden by an inline style. */
+  
+  /**
+   * Calculated values.
+   */
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+  grid-gap: var(--grid-layout-gap);
+}
+
+
+
+/*
+ Unrelated styling
+*/
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.expander {
+  float: left;
+  background: pink;
+  height: 200px;
+  min-width: 100px;
+  margin-right: 10px;
+  padding: 5px;
+  resize: both;
+  overflow: auto;
+}
+.controls {
+  display: flex;
+  gap: 20px;
+  background: #eee;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+input {
+  font-size: 20px;
+  width: 70px;
+  padding: 5px;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  background: lightblue;
+  font-size: 13px
+}
