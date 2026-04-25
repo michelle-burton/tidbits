@@ -1,0 +1,74 @@
+/* Box Model Hack */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  inset: -40px;
+  background-position: center;
+  background-size: cover;
+  will-change: transform;
+}
+
+.bg {
+  background-image: url('../img/Cyan-bk-Lg.jpg');
+  z-index: 1;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.2;
+  animation: drift 60s linear infinite;
+  z-index: 2;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 255, 0.15),
+    transparent 60%
+  );
+
+  z-index: 2;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.content {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 8%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+}
